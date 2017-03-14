@@ -29,8 +29,20 @@ public class App {
 
       Parcel userParcel = new Parcel(userLength, userWeight, userHeight, userWeight, userDistance);
 
-      System.out.println("For five plus day shipping your cost is: " + userParcel.costToShip(userParcel));
+      System.out.println("For 5 day shipping your cost is: $" + userParcel.costToShip(userParcel));
+      System.out.println("For 2-3 day shipping your cost is: $" + (userParcel.costToShip(userParcel) * 2));
+      System.out.println("For 1 day shipping your cost is: $" + (userParcel.costToShip(userParcel) * 3));
 
+      System.out.println("Please type 5, 2-3, or 1 to make your selection.");
+      String shippingSpeed = myConsole.readLine();
+
+      if (shippingSpeed.equals("5")) {
+        System.out.println("Ok your cost for shipping is: $" + userParcel.costToShip(userParcel));
+      } else if (shippingSpeed.equals("2-3")) {
+        System.out.println("Ok your cost for shipping is: $" + (userParcel.costToShip(userParcel) * 2));
+      } else if (shippingSpeed.equals("1")) {
+        System.out.println("Ok your cost for shipping is: $" + (userParcel.costToShip(userParcel) * 3));
+      }
     }
   }
 }
